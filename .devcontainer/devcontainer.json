@@ -1,7 +1,8 @@
 {
     "image": "mcr.microsoft.com/devcontainers/javascript-node:1-18",
     "features": {
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/prulloac/devcontainer-features/pre-commit:1": {}
     },
     "postCreateCommand": "npm install -g @devcontainers/cli",
     "hostRequirements": {
@@ -10,8 +11,26 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "mads-hartmann.bash-ide-vscode"
+                "mads-hartmann.bash-ide-vscode",
+                "streetsidesoftware.code-spell-checker",
+                "usernamehw.errorlens",
+                "SonarSource.sonarlint-vscode"
             ]
+        },
+        "settings": {
+            "editor.trimAutoWhitespace": true,
+            "files.autoSave": "afterDelay",
+            "files.eol": "\n",
+            "files.exclude": {
+                "**/.vscode": true
+            },
+            "search.exclude": {
+                "**/*.code-search": true,
+                "**/*.git": true,
+                "**/*.vscode-server": true,
+                "**/bower_components": true,
+                "**/node_modules": true
+            }
         }
     }
 }
